@@ -12,6 +12,6 @@ public class CompanyService : ICompanyService
 
     public async Task<IEnumerable<Company>> GetAllCompanies()
     {
-        return await _context.Companies.Include(c => c.Apartments).ToListAsync();
+        return await _context.Companies.ToListAsync();
     }
 }

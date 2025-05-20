@@ -20,4 +20,14 @@ public class ApartmentService : IApartmentService
         DateTime date = DateTime.Today.AddMonths(numberOfMonths);
         return await _context.Apartments.Where(apartment => apartment.CompanyId == companyId && apartment.ContractEndDate <= date).ToListAsync();
     }
+
+    public async Task<Apartment> UpdateApartmentContractDate(int companyId, int apartmentId, DateTime newContractDate)
+    {
+        var apartmentToUpdate = await _context.Apartments.Where(apartment => apartment.CompanyId == companyId && apartment.Id == apartmentId).SingleAsync();
+        apartmentToUpdate.ContractEndDate = newContractDate;
+        await _context.SaveChangesAsync();
+
+        return apartmentToUpdate;
+
+    }
 }

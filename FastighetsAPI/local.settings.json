@@ -1,0 +1,12 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "FUNCTIONS_INPROC_NET8_ENABLED": "1",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+        "DatabaseConnection": "Server=tcp:riskbyggen.database.windows.net,1433;Initial Catalog=Fastigheter;Persist Security Info=False;User ID=bilal;Password=Riksbyggen1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+    },
+    "Host": {
+        "CORS": "*"
+    }
+}

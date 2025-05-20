@@ -42,8 +42,6 @@ namespace FastighetsAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompanyId");
-
                     b.ToTable("Apartments");
                 });
 
@@ -62,20 +60,6 @@ namespace FastighetsAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
-                });
-
-            modelBuilder.Entity("Apartment", b =>
-                {
-                    b.HasOne("Company", null)
-                        .WithMany("Apartments")
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Company", b =>
-                {
-                    b.Navigation("Apartments");
                 });
 #pragma warning restore 612, 618
         }
